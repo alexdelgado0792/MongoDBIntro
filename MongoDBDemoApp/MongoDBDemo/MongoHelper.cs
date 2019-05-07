@@ -51,7 +51,7 @@ namespace MongoDBDemo
         public T LoadRecordById<T>(string table, Guid identifier)
         {
             var collection = db.GetCollection<T>(table);
-            var filter = Builders<T>.Filter.Eq("Id",identifier);
+            var filter = Builders<T>.Filter.Eq("Id", identifier);
 
             return collection.Find(filter).First();
         }
